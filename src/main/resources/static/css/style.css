@@ -20,3 +20,16 @@ hr{
     color:#333;
     background-color: #333;
 }
+
+.home-headline{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    color: #ffffff;
+    text-align: center;
+    margin : auto;
+}
+
+.home-headline span{
+    background-color: #231F20;
+    padding: 5px 22px;
+}
