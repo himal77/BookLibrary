@@ -20,7 +20,7 @@ public class UserRole {
     private Role role;
 
 
-    public userRole(User user, Role role){
+    public void userRole(User user, Role role){
         this.user = user;
         this.role = role;
     }
