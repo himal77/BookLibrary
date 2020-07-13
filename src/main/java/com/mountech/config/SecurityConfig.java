@@ -1,6 +1,7 @@
 package com.mountech.config;
 
 import com.mountech.service.impl.UserSecurityService;
+import com.mountech.utility.SecurityUtility;
 import org.apache.catalina.security.SecurityUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
