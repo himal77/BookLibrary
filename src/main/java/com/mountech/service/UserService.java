@@ -11,5 +11,5 @@ public interface UserService {
     void createPasswordResetTokenForUser(final User user, final String token);
     User findByUsername(String username);
     User findByEmail(String email);
-    void createUser(User user, Set<UserRole> userRoles);
+    User createUser(User user, Set<UserRole> userRoles) throws Exception;
 }
