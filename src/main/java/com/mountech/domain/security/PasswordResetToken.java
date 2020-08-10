@@ -14,6 +14,7 @@ public class PasswordResetToken {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     private String token;
 
     @OneToOne(targetEntity = User.class, fetch = FetchType.EAGER)
@@ -22,18 +23,18 @@ public class PasswordResetToken {
 
     private Date expiryDate;
 
-    public PasswordResetToken() {}
-
     public PasswordResetToken(final String token, final User user){
         this.token = token;
         this.user = user;
         this.expiryDate = calculateExpiryDate(EXPIRATION);
     }
 
-    private Date calculateExpiryDate(final int expiration) {
+    public PasswordResetToken(){}
+
+    private Date calculateExpiryDate(final int expiryTimeInMinute) {
         final Calendar cal = Calendar.getInstance();
         cal.setTimeInMillis(new Date().getTime());
-        cal.add(Calendar.MINUTE, expiration);
+        cal.add(Calendar.MINUTE, expiryTimeInMinute);
         return new Date(cal.getTime().getTime());
     }
 

@@ -13,6 +13,15 @@ public class Role {
     @OneToMany(mappedBy = "role", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<UserRole> userRole = new HashSet<>();
 
+    public Role(int roleId, String name, Set<UserRole> userRole) {
+        this.roleId = roleId;
+        this.name = name;
+        this.userRole = userRole;
+    }
+
+    public Role() {
+    }
+
     public int getRoleId() {
         return roleId;
     }

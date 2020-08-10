@@ -3,6 +3,7 @@ package com.mountech.service;
 import com.mountech.domain.User;
 import com.mountech.domain.security.PasswordResetToken;
 import com.mountech.domain.security.UserRole;
+import org.springframework.context.annotation.Bean;
 
 import java.util.Set;
 

@@ -1,9 +1,8 @@
 package com.mountech.utility;
 
 import com.mountech.domain.User;
-import org.omg.CORBA.Environment;
-import org.omg.CORBA.LocalObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Component;
 
@@ -18,12 +17,12 @@ public class MailConstructor {
              String contextPath, Locale locale, String token, User user, String password
      ){
          String url = contextPath = "/newUser?token="+token;
-         String message = "\nPlease click on this link to verify yoour email and edit your information. Your password is: \n"+password
+         String message = "\nPlease click on this link to verify your email and edit your information. Your password is: \n"+password;
          SimpleMailMessage email = new SimpleMailMessage();
          email.setTo(user.getEmail());
          email.setSubject("Mountain library new user");
          email.setText(url+message);
-         email.setFrom(env.setProperty("support.email"));
+         email.setFrom(env.getProperty("support.email"));
          return email;
      }
 

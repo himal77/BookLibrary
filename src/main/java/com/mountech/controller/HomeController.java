@@ -64,7 +64,7 @@ public class HomeController {
             @ModelAttribute("email") String userEmail,
             @ModelAttribute("username") String username,
             Model model) throws Exception{
-        model.addAttribute("classActiveAccount", true);
+        model.addAttribute("classActiveNewAccount", true);
         model.addAttribute("email", userEmail);
         model.addAttribute("username", username);
 
